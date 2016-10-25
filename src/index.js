@@ -9,7 +9,7 @@ type SupportedColorsType = $Keys<typeof supportedColors>;
 
 function decorateBlinkInterval(target, key, descriptor) {
   const method = descriptor.value;
-  const moreInterval = 100;
+  const moreInterval = 400;
   let ret;
   descriptor.value = (...args) => {
     args[0] += moreInterval;
@@ -36,12 +36,10 @@ class Blinker {
 
   async blink(color: SupportedColorsType) {
     while(true) {
-      async () => {
-        $(`#led-${color}`).turnOn();
-        await Promise.delay(this.blinkLength);
-        $(`#led-${color}`).turnOff();
-        await Promise.delay(this[({b: 'blue', g: 'green', r: 'red'})[color]]);
-      }
+      $(`#led-${color}`).turnOn();
+      await Promise.delay(this.blinkLength);
+      $(`#led-${color}`).turnOff();
+      await Promise.delay(this[({b: 'blue', g: 'green', r: 'red'})[color]]);
     }
   }
 
