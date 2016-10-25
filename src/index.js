@@ -40,7 +40,7 @@ class Blinker {
         $(`#led-${color}`).turnOn();
         await Promise.delay(this.blinkLength);
         $(`#led-${color}`).turnOff();
-        await Promise.delay(this.blueBlinkInterval);
+        await Promise.delay(this[({b: 'blue', g: 'green', r: 'red'})[color]]);
       }
     }
   }

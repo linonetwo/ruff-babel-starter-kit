@@ -5,11 +5,11 @@
   "author": "linonetwo",
   "main": "build/index.js",
   "ruff": {
-      "boards": {
-          "ruff-mbd-v1": "^4.1.4",
-          "*": "*"
-      },
-      "dependencies": {}
+    "boards": {
+      "ruff-mbd-v1": "^4.1.4",
+      "*": "*"
+    },
+    "dependencies": {}
   },
   "scripts": {
     "build": "babel src -d build",
@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "babel-register": "^6.3.13",
-    "babel-runtime": "^6.3.19"
+    "babel-runtime": "^6.3.19",
+    "bluebird": "^3.4.6"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
