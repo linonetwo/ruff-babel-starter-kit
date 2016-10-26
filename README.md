@@ -1,6 +1,8 @@
 # ruff-babel-starter-kit
 
-Transform ES6+ to ruff runable code
+Transform ES6+ to ruff runable code  
+
+[Ruff](https://ruff.io/) is a ESMAScript IoT runtime, you can use ECMAScript to develop IoT rapidly.
 
 ## Usage
 
