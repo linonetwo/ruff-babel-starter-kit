@@ -2,7 +2,9 @@
 
 Transform ES6+ to ruff runable code  
 
-[Ruff](https://ruff.io/) is a ESMAScript IoT runtime, you can use ECMAScript to develop IoT rapidly.
+[Ruff](https://ruff.io/) is an ESMAScript IoT runtime, you can use ECMAScript to develop IoT rapidly.  
+
+It also have a cloud and networking solution: [Sluff IoT Core Reference Architecture](http://sluff.io/zh-cn/docs/index.html)  
 
 ## Usage
 
