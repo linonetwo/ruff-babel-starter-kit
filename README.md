@@ -20,6 +20,10 @@ npm run deploy
 
 ## Notes
 
+### Wifi
+
+If there are any connection issue, please check which wifi you are in first please!  
+
 ### Npm packages
 
 To install and use packages from npm, for example bluebird, you should run:  
