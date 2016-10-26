@@ -7,7 +7,7 @@ Transform ES6+ to ruff runable code
 To install babel, connect to wifi with internet access, run:
 
 ```shell
-npm i
+rap install && npm install
 ```
 
 Write codes in /src with index.js as an entry.
