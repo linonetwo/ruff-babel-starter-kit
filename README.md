@@ -22,7 +22,7 @@ npm run deploy
 
 ### Wifi
 
-If there are any connection issue, please check which wifi you are in first please!  
+If there are any connection issue, please check out which wifi are you in first!  
 
 ### Npm packages
 
