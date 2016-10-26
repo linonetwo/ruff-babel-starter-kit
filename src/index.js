@@ -1,3 +1,5 @@
+import regeneratorRuntime from "regenerator-runtime";
+var Promise = require("bluebird");
 
 const supportedColors = {
   r: 'r',
@@ -9,7 +11,7 @@ type SupportedColorsType = $Keys<typeof supportedColors>;
 
 function decorateBlinkInterval(target, key, descriptor) {
   const method = descriptor.value;
-  const moreInterval = 400;
+  const moreInterval = 1000;
   let ret;
   descriptor.value = (...args) => {
     args[0] += moreInterval;
@@ -21,7 +23,7 @@ function decorateBlinkInterval(target, key, descriptor) {
 }
 
 class Blinker {
-  constructor(blinkLength: number = 100, blueBlinkInterval: number = 200, redBlinkInterval: number = 600, greenBlinkInterval: number = 1000) {
+  constructor(blinkLength: number = 1000, blueBlinkInterval: number = 3000, redBlinkInterval: number = 6000, greenBlinkInterval: number = 5000) {
     this.started = false;
     this.blinkLength = blinkLength;
     this.init(blueBlinkInterval, redBlinkInterval, greenBlinkInterval);
@@ -35,11 +37,17 @@ class Blinker {
   }
 
   async blink(color: SupportedColorsType) {
-    while(true) {
+    const colorName: string = ({b: 'blueBlinkInterval', g: 'greenBlinkInterval', r: 'redBlinkInterval'})[color];
+    const delayLength: number = this[colorName];
+
+    while(this.started) {
       $(`#led-${color}`).turnOn();
+      console.log(`#led-${color} is on for ${this.blinkLength} ms`);
       await Promise.delay(this.blinkLength);
+
       $(`#led-${color}`).turnOff();
-      await Promise.delay(this[({b: 'blue', g: 'green', r: 'red'})[color]]);
+      console.log(`#led-${color} is off for ${delayLength} ms`);
+      await Promise.delay(delayLength);
     }
   }
 
@@ -50,19 +58,22 @@ class Blinker {
     this.started = true;
     ['r', 'g', 'b'].map(color => this.blink(color));
   }
+
+  stopBlink() {
+    this.started = false;
+  }
 }
 
+const blinker = new Blinker()
 $.ready(function (error) {
   if (error) {
     console.log(error);
     return;
   }
 
-  $('#led-b').turnOn();
-  $('#led-g').turnOn();
+  blinker.startBlink();
 });
 
 $.end(function () {
-  $('#led-b').turnOff();
-  $('#led-g').turnOff();
+  blinker.stopBlink();
 });

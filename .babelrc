@@ -1,7 +1,6 @@
 {
   "plugins": [
     "transform-decorators-legacy",
-    "typecheck",
     "syntax-flow",
     "transform-flow-strip-types"
   ],

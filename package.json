@@ -1,43 +1,43 @@
 {
-    "name": "ruff-babel-starter-kit",
-    "version": "0.1.0",
-    "description": "Transform ES6+ to ruff runable code",
-    "author": "linonetwo",
-    "main": "build/index.js",
-    "ruff": {
-        "boards": {
-            "ruff-mbd-v1": "^4.1.4",
-            "*": "*"
-        },
-        "dependencies": {
-            "promise": "^0.1.2"
-        },
-        "devDependencies": {}
-    },
-    "scripts": {
-        "build": "babel src -d build",
-        "predeploy": "npm run build",
-        "deploy": "rap deploy -s"
+  "name": "ruff-babel-starter-kit",
+  "version": "0.1.0",
+  "description": "Transform ES6+ to ruff runable code",
+  "author": "linonetwo",
+  "main": "build/index.js",
+  "ruff": {
+    "boards": {
+      "ruff-mbd-v1": "^4.1.4",
+      "*": "*"
     },
     "dependencies": {
-        "babel-register": "^6.3.13",
-        "babel-runtime": "^6.3.19",
-        "bluebird": "^3.4.6"
+      "regenerator-runtime": "npm:^0.9.5",
+      "bluebird": "npm:^3.4.6"
     },
-    "devDependencies": {
-        "babel-core": "^6.5.2",
-        "babel-loader": "^6.2.1",
-        "babel-plugin-add-module-exports": "^0.2.0",
-        "babel-plugin-transform-decorators-legacy": "^1.3.4",
-        "babel-plugin-transform-react-display-name": "^6.3.13",
-        "babel-plugin-transform-runtime": "^6.3.13",
-        "babel-polyfill": "^6.3.14",
-        "babel-preset-es2015": "^6.3.13",
-        "babel-preset-react": "^6.3.13",
-        "babel-preset-stage-0": "^6.3.13",
-        "babel-cli": "^6.11.4",
-        "babel-eslint": "^6.0.4",
-        "babel-plugin-react-transform": "^2.0.0",
-        "babel-plugin-typecheck": "^3.6.0"
-    }
+    "devDependencies": {}
+  },
+  "scripts": {
+    "build": "babel src -d build",
+    "predeploy": "npm run build",
+    "deploy": "rap deploy -s",
+    "dev": "nodemon -e js --exec npm run deploy"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-react-transform": "^2.0.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-react-display-name": "^6.3.13",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-plugin-typecheck": "^3.6.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "nodemon": "^1.11.0"
+  }
 }
