@@ -46,7 +46,7 @@ And babel-plugin-typecheck is not supported yet, since it will use ```Symbol```.
 1kb code will trans to approximately 400kb, mostly polyfill and **bluebird**.  
 But this is worthwhile since you are happy writing ES6+ and using way more powerful Promise.  
 
-If you are not using bluebird features, you can safely remove it from package.json:  
+But js size larger than 1M is currently not supported by ruff1.6. So if you are not using bluebird features, you can safely remove it from package.json:  
 
 ```json
 {

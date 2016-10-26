@@ -1,5 +1,5 @@
 import regeneratorRuntime from "regenerator-runtime";
-var Promise = require("bluebird");
+const Promise = require("bluebird");
 
 const supportedColors = {
   r: 'r',
