@@ -7,8 +7,10 @@ Transform ES6+ to ruff runable code
 To install babel, connect to wifi with internet access, run:
 
 ```shell
-rap install && npm install
+rap install && npm install && rap layout
 ```
+
+Note that ```rap layout``` is mostly for automatically download main board drivers.
 
 Write codes in /src with index.js as an entry.
 
